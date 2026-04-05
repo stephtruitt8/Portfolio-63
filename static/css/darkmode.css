@@ -1,0 +1,28 @@
+/* Dark mode */
+body.dark-mode {
+    background: linear-gradient(135deg, #1c1f1c, #2b332b);
+    color: #f1f1f1;
+}
+
+body.dark-mode .navbar {
+    background-color: #2f4f2f !important;
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link {
+    color: #f5f5f5 !important;
+}
+
+body.dark-mode .nav-link:hover {
+    color: #b7d3a8 !important;
+}
+
+body.dark-mode main > * {
+    background: #2a2a2a;
+    color: #f1f1f1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode footer {
+    color: #cfcfcf;
+}
