@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="class projects-section center-colum">
+    <h2>Projects</h2>
+    <div class="class project-list">
+        <!--Loop for all objects-->
+            <!--cards-->
+                {% for project in projects %}
+                <div class="class project-card">
+                    a href="{{project.repository}} target="_blank">
+                        <img src="{{project.image.}}" alt="project.name">
+                        <p>{{ project.name }}</p>
+                        <p>{{ project.description }}</p>
+                        <p>{{ project.year}}</p>
+                        {% for skill in project.skills.all %} 
+                        <div class="class skill-container center">
+                            <label class="text-label">{{ skill.name }}</label>
+                        </div>
+                        {% endfor %}
+                    </a>
+                        
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                </div>
+                {% endfor %}
+    </div>
+</section>
+
+
+{% endblock content %}
+
+
