@@ -1,0 +1,36 @@
+.experience-item {
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.85);
+    transition: 0.3s;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.icon {
+    font-size: 2rem;
+    color: #2e7d32;
+    min-width: 50px;
+}
+
+.experience-item h4 {
+    font-family: 'Caveat', cursive;
+    margin-bottom: 5px;
+}
+
+.experience-item p {
+    margin-bottom: 5px;
+}
+
+/* DARK MODE */
+.dark-mode .experience-item {
+    background: rgba(30,30,30,0.9);
+    color: #f1f1f1;
+}
+
+.dark-mode .icon {
+    color: #a5d6a7;
+}

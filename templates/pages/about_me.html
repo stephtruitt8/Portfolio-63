@@ -3,21 +3,48 @@
 {% load static %}
 
 {% block content %}
-<h1>About Me</h1>
-<p>This is the about me page.</p>
 
-<section class="container-md">
-    <div class="about image-container center">
-        <img src={% static 'images/' %} alt="my picture">
-    </div>
 
-    <div class="class about-description-container center-column">
-        <div>
-            <h1>Hello I'm Barto</h1>
+<section class="container py-5">
+    <div class="row justify-content-center align-items-center g-4">
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, ipsam eum! Facilis dolorem dicta et quos aperiam, mollitia dignissimos animi natus eos, reprehenderit beatae tempora quis aliquam omnis odio. Officia sint saepe rerum ipsam reiciendis temporibus asperiores culpa neque doloribus porro sunt atque cumque incidunt nulla minima, illo explicabo itaque. Nostrum ipsa tempora, quibusdam animi inventore blanditiis dolorum eum ipsum a rem quaerat. Exercitationem omnis nesciunt animi. Repellat, deserunt? Eveniet iste iure itaque unde similique accusamus sit sunt at aspernatur deserunt, nisi nihil saepe, suscipit hic repellendus aliquam esse nobis, laudantium dolorem fugit debitis fuga! Cumque, praesentium obcaecati! Autem, repellat.</p>
-
+        <div class="col-md-5 text-center">
+            <img src="{% static 'images/my-picture.webp' %}"
+                 alt="Stephen Truitt"
+                 class="img-fluid rounded shadow"
+                 style="max-height: 450px; width: 100%; object-fit: cover;">
         </div>
+
+        <div class="col-md-7">
+            <h1 class="display-5">What is BartoArts about?</h1>
+
+            <p>
+                BartoArts is a creative space where art and imagination come together. It’s where ideas turn into visuals—through prints, animations, apparel, and everything in between.
+            </p>
+
+            <p>
+                This space is about more than just making art. It’s about experimenting, learning, and growing as a creator. Every piece represents a moment, a feeling, or a concept being explored.
+            </p>
+
+            <p>
+                BartoArts is a place to push boundaries, try new styles, and share a unique perspective with the world—one project at a time.
+            </p>
+
+            <h1 class="display-5 mt-4">Stephen Truitt</h1>
+
+            <p>
+                Stephen Truitt is the founder and lead artist behind BartoArts. With a passion for creativity and a keen eye for detail, he transforms ideas into captivating visual experiences that blend imagination with intention. His work spans prints, animation, apparel, and digital design—each piece reflecting a commitment to growth, storytelling, and artistic exploration.
+            </p>
+
+            <p>
+                Beyond the canvas, Stephen draws inspiration from a wide range of experiences. He enjoys gaming as both a creative outlet and a source of storytelling inspiration, often influenced by the worlds, characters, and visuals found in games. He also has a passion for traveling and exploring new cultures, gaining fresh perspectives that shape his artistic voice and influence his work.
+            </p>
+
+            <p>
+                When he’s not creating, Stephen is constantly exploring new techniques, collaborating with other artists, and sharing his knowledge with the creative community. He is a dedicated artist and innovator, always pushing the boundaries of what’s possible in art and design while staying true to his unique perspective.
+            </p>
+        </div>
+
     </div>
 </section>
 

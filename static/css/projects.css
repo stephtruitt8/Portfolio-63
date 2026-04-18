@@ -1,0 +1,24 @@
+.project-carousel-img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.random-project-img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.random-project-img:hover {
+    transform: scale(1.03);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    padding: 12px;
+}
+
+.dark-mode .carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+}

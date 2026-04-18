@@ -1,70 +1,94 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    
-    <title>
-        {% block title %}
-        My Website
-        {% endblock title %}
-    </title>
-        
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/experience.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Caveat:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+
+    <title>{% block title %}My Website{% endblock title %}</title>
 </head>
 <body>
-     
+    <div class="page-wrapper">
 
+        <header>
+            <nav class="sketch-navbar">
+                <div class="brand-wrap">
+                    <span class="brand-star">✦</span>
+                    <div class="brand">BartoArts</div>
+                    <span class="brand-star">✦</span>
+                </div>
 
-    <!-- Navigation -->
-     <header class="center">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                
+                <div class="nav-links">
+                    <a href="{% url 'about_me' %}">About</a>
+                    <a href="{% url 'blog' %}">Blog</a>
+                    <a href="{% url 'projects' %}">Projects</a>
+                    <a href="{% url 'experience' %}">Experience</a>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <button id="darkModeToggle" class="dark-btn">☾</button>
+            </nav>
+        </header>
 
-                <button id="darkModeToggle" class="btn btn-outline-light ms-3">Dark Mode</button>
+        <main class="main-content">
+            {% block content %}
+            {% endblock %}
+        </main>
 
+        <footer class="sketch-footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2026 BartoArts · ✨</p>
 
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="{% url 'about_me' %}">About me</a>
-                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-                        <a class="nav-link" href="{% url 'projects' %}">Projects</a>
-                        <a class="nav-link" href="{% url 'experience' %}">Experience</a>
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                            
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="https://instagram.com/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://github.com/" target="_blank" class="social-icon" aria-label="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
                     </div>
+
+                    <a href="{% url 'contact' %}" class="contact-link">✉ Contact Me</a>
                 </div>
             </div>
-        </nav>
-     </header>
+        </footer>
 
-    <!-- content MAIN-->
-     <main>
-        {% block content %}
+    </div>
 
-        {% endblock %}
-     </main>
+    <script>
+        const toggle = document.getElementById("darkModeToggle");
 
-    <!-- Footer -->
-     <footer>
-        
-        <div class="card">
-            <h5 class="card-header">Featured</h5>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Contact Me</a>
-            </div>
-        </div>
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
 
-     </footer>
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+
+        window.onload = () => {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -2,8 +2,107 @@
 
 {% load static %}
 
+{}
+
 {% block content %}
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
 
-   <h1>Blog</h1>
+            <!-- Blog Post -->
+            <article class="card shadow-sm border-0 rounded-4 mb-4">
+                <div class="card-body p-4 p-md-5">
+                    <p class="text-muted mb-2">Posted on April 17, 2026 · by Stephen Truitt</p>
 
+                    <h1 class="display-5 mb-3">Learning to Create Even When Inspiration Feels Far Away</h1>
+
+                    <p class="lead text-muted">
+                        Sometimes creating doesn’t begin with motivation. Sometimes it begins with showing up anyway.
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        Lately, I’ve been thinking a lot about what it means to create when you don’t necessarily feel inspired.
+                        A lot of people imagine art as this magical process where ideas just appear, but the truth is that creativity
+                        can be messy, uncertain, and even frustrating at times.
+                    </p>
+
+                    <p>
+                        There are days when everything flows naturally, and there are other days when even starting feels difficult.
+                        I think that’s part of the process too. Growth doesn’t only happen in the moments where everything looks polished.
+                        It also happens in the quiet moments where you keep going, experiment, and allow yourself to make something imperfect.
+                    </p>
+
+                    <p>
+                        For me, art has always been more than just the final piece. It’s a way to process ideas, tell stories,
+                        and better understand myself. Whether I’m working on prints, animation, design, or something completely new,
+                        I’m always learning through the act of making.
+                    </p>
+
+                    <p>
+                        I wanted this blog to be a space where I can share some of those thoughts honestly—creative highs, creative lows,
+                        lessons I’m learning, and the ideas that keep me moving forward.
+                    </p>
+
+                    <blockquote class="blockquote border-start border-4 ps-3 my-4">
+                        <p class="mb-0">Creativity is not always about feeling ready. Sometimes it’s about being willing.</p>
+                    </blockquote>
+
+                    <p>
+                        Thanks for reading and being part of the journey.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Comment Section -->
+            <section class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h2 class="h3 mb-4">Comments</h2>
+
+                    <!-- Existing Comments -->
+                    <div class="mb-4">
+                        <div class="border rounded-3 p-3 mb-3 bg-light">
+                            <h5 class="mb-1">Jordan</h5>
+                            <p class="text-muted small mb-2">April 16, 2026</p>
+                            <p class="mb-0">
+                                I really connected with this. It’s easy to forget that creating consistently matters just as much
+                                as feeling inspired.
+                            </p>
+                        </div>
+
+                        <div class="border rounded-3 p-3 mb-3 bg-light">
+                            <h5 class="mb-1">Alex</h5>
+                            <p class="text-muted small mb-2">April 17, 2026</p>
+                            <p class="mb-0">
+                                This was super encouraging. I’ve been struggling with creative burnout lately, so this hit home.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comment Form -->
+                    <h3 class="h4 mb-3">Leave a Comment</h3>
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Comment</label>
+                            <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="Share your thoughts..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success rounded-pill px-4">
+                            Post Comment
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</section>
 {% endblock %}

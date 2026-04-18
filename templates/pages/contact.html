@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block title %}Contact{% endblock title %}
 
 {% block content %}
 
-<section class="contact-form">
-    <h1>Contact Me</h1>
-    <form id="contactForm" method="POST">
-       {% csrf_token %}
-       {{form.as_p}}
-       <div>
-        <button type="submit" class="btn btn-primary">Send</button>
-        <button type="reset" class="btn btn-secondary">Cancel</button>
-       </div>
-        
-    </form>
+<section class="contact-section container py-5">
+    
+    <div class="contact-card mx-auto">
+
+        <h1 class="text-center mb-4">Contact Me</h1>
+
+        <form id="contactForm" method="POST">
+            {% csrf_token %}
+
+            <div class="form-content">
+                {{ form.as_p }}
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-success px-4 me-2">Send</button>
+                <button type="reset" class="btn btn-outline-secondary px-4">Cancel</button>
+            </div>
+
+        </form>
+
+    </div>
+
 </section>    
 
 {% endblock content %}
